@@ -1,6 +1,4 @@
 import streamlit as st
-import pandas as pd
-import plotly.express as px
 import plotly.graph_objects as go
 from gemini_helper import stream_gemini_response, analyze_multimodal, get_api_key
 
@@ -275,18 +273,11 @@ with tab_analytics:
 
     with g1:
         st.markdown("**Processing Time: Traditional vs AI Engine**")
-        df_perf = pd.DataFrame({
-            "Task": ["Data Ingestion", "Pattern Extraction", "Risk Scoring", "Final Dispatch"],
-            "Manual Process (Mins)": [45, 120, 60, 30],
-            "AI-Automated (Secs)": [3, 8, 2, 1],
-        })
-        fig_perf = px.bar(
-            df_perf,
-            x="Task",
-            y=["Manual Process (Mins)", "AI-Automated (Secs)"],
-            barmode="group",
-            color_discrete_sequence=["#EF4444", "#10B981"],
-        )
+        tasks = ["Data Ingestion", "Pattern Extraction", "Risk Scoring", "Final Dispatch"]
+        fig_perf = go.Figure(data=[
+            go.Bar(name='Manual Process (Mins)', x=tasks, y=[45, 120, 60, 30], marker_color='#EF4444'),
+            go.Bar(name='AI-Automated (Secs)', x=tasks, y=[3, 8, 2, 1], marker_color='#10B981')
+        ])
         fig_perf.update_layout(
             template="plotly_dark",
             paper_bgcolor="rgba(0,0,0,0)",
