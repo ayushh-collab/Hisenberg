@@ -35,7 +35,7 @@ def stream_gemini_response(
     prompt: str,
     system_instruction: Optional[str] = None,
     api_key: Optional[str] = None,
-    model: str = "gemini-2.5-flash",
+    model: str = "gemini-flash-latest",
 ) -> Generator[str, None, None]:
     """Stream text response from Gemini."""
     client = get_gemini_client(api_key)
@@ -69,7 +69,7 @@ def analyze_multimodal(
     mime_type: str,
     system_instruction: Optional[str] = None,
     api_key: Optional[str] = None,
-    model: str = "gemini-2.5-flash",
+    model: str = "gemini-flash-latest",
 ) -> str:
     """Analyze an uploaded image or document with Gemini."""
     client = get_gemini_client(api_key)

@@ -65,9 +65,9 @@ with st.sidebar:
     # Model & Persona Selection
     selected_model = st.selectbox(
         "AI Model",
-        options=["gemini-2.5-flash", "gemini-2.5-pro"],
+        options=["gemini-flash-latest", "gemini-pro-latest"],
         index=0,
-        help="Gemini 2.5 Flash is ultra-fast and recommended for live demos.",
+        help="Gemini Flash is ultra-fast and recommended for live demos.",
     )
 
     system_role = st.selectbox(
