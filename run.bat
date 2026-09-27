@@ -1,7 +1,7 @@
 @echo off
-title Hackathon AI App
+title MediConnect Platform
 echo ==========================================
-echo Starting Streamlit Hackathon Engine...
+echo Starting MediConnect Platform...
 echo ==========================================
 .\.venv\Scripts\streamlit run app.py
 pause
